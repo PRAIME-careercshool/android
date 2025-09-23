@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@android:color/white"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="1dp">
+
+    <!-- 왼쪽 아이콘 -->
+    <ImageView
+        android:id="@+id/diaryIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#FF6B6B"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="center_vertical" />
+
+    <!-- 일지 정보 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/diaryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1월 3일"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/diaryType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="씨앗 뿌림"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/diaryStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="발아"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:background="#4CAF50"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/diaryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘 씨앗을 심었다. 내일 새싹이 날까? 기대해보자!"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/diaryDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="뿌린 씨앗이 잘 자라기를 바라며 물을 충분히 주었다."
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
