@@ -17,17 +17,15 @@
         android:padding="16dp"
         android:elevation="4dp">
 
-        <TextView
+        <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="←"
-            android:textSize="28sp"
-            android:textColor="@color/text_primary"
-            android:layout_marginEnd="16dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
             android:padding="8dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground" />
+            android:layout_marginEnd="16dp" />
 
         <TextView
             android:layout_width="0dp"

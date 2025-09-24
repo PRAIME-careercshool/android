@@ -1,6 +1,7 @@
 package com.example.hackathon
 
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -14,7 +15,7 @@ class DiaryListActivity : AppCompatActivity() {
     
     private fun setupClickListeners() {
         // 뒤로가기 버튼
-        findViewById<TextView>(R.id.btnBack).setOnClickListener {
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
             finish()
         }
     }

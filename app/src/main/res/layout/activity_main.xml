@@ -401,6 +401,7 @@
 
         <!-- 음성 버튼 -->
         <LinearLayout
+            android:id="@+id/btnPhone"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -432,8 +433,8 @@
 
         </LinearLayout>
 
-        <!-- 내 정보 버튼 -->
         <LinearLayout
+            android:id="@+id/btnMyInfo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

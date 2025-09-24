@@ -23,4 +23,9 @@
     <color name="search_background">#F5F5F5</color>
     <color name="tab_selected">#87CEEB</color>
     <color name="tab_unselected">#E0E0E0</color>
+    
+    <!-- 일지 작성 페이지 색상 -->
+    <color name="primary_green">#4CAF50</color>
+    <color name="border_light_gray">#E0E0E0</color>
+    <color name="selected_activity">#4CAF50</color>
 </resources>

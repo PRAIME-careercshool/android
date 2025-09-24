@@ -2,8 +2,10 @@ package com.example.hackathon
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 
 class AccountListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,8 +17,14 @@ class AccountListActivity : AppCompatActivity() {
     
     private fun setupClickListeners() {
         // 뒤로가기 버튼
-        findViewById<TextView>(R.id.btnBack).setOnClickListener {
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
             finish()
+        }
+
+        // 작성하기 버튼
+        findViewById<androidx.cardview.widget.CardView>(R.id.btnCreateAccount).setOnClickListener {
+            val intent = Intent(this, AccountCreateActivity::class.java)
+            startActivity(intent)
         }
     }
 }

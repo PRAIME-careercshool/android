@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -42,7 +43,7 @@ class AccountCreateActivity : AppCompatActivity() {
     
     private fun setupClickListeners() {
         // 뒤로가기 버튼
-        findViewById<TextView>(R.id.btnBack).setOnClickListener {
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
             finish()
         }
         
@@ -79,9 +80,9 @@ class AccountCreateActivity : AppCompatActivity() {
         }
         
         // 사진 업로드
-        findViewById<CardView>(R.id.photoUploadArea).setOnClickListener {
-            checkCameraPermissionAndTakePhoto()
-        }
+        // findViewById<CardView>(R.id.photoUploadArea).setOnClickListener {
+        //     checkCameraPermissionAndTakePhoto()
+        // }
     }
     
     private fun checkCameraPermissionAndTakePhoto() {
