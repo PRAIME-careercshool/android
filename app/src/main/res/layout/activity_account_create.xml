@@ -77,13 +77,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="1dp">
+                        app:cardElevation="1dp"
+                        android:background="@android:color/white">
 
                         <Spinner
                             android:id="@+id/categorySpinner"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
+                            android:background="@android:color/white"
                             android:paddingStart="16dp"
                             android:paddingEnd="16dp" />
 
@@ -122,13 +123,14 @@
                         android:layout_height="56dp"
                         android:layout_marginBottom="16dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="1dp">
+                        app:cardElevation="1dp"
+                        android:background="@android:color/white">
 
                         <EditText
                             android:id="@+id/amountEditText"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
+                            android:background="@android:color/white"
                             android:hint="100,000 원"
                             android:inputType="number"
                             android:paddingStart="16dp"
@@ -217,30 +219,6 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/btn500000"
-                            android:layout_width="0dp"
-                            android:layout_height="36dp"
-                            android:layout_weight="1"
-                            android:layout_marginStart="4dp"
-                            android:layout_marginEnd="4dp"
-                            app:cardCornerRadius="18dp"
-                            app:cardElevation="1dp"
-                            android:clickable="true"
-                            android:foreground="?android:attr/selectableItemBackground">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/tab_unselected"
-                                android:gravity="center"
-                                android:text="50만원"
-                                android:textSize="16sp"
-                                android:textColor="@color/text_secondary"
-                                android:textStyle="bold" />
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
                             android:id="@+id/btn1000000"
                             android:layout_width="0dp"
                             android:layout_height="36dp"
@@ -301,52 +279,46 @@
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
 
-                    <!-- 사진 업로드 영역 -->
+                    <!-- 촬영된 이미지 표시 영역 -->
+                    <ImageView
+                        android:id="@+id/capturedImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginBottom="8dp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/white"
+                        android:visibility="gone" />
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/photoUploadArea"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="1dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
                         android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground">
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:background="@color/white">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/search_background"
+                            android:background="@color/white"
+                            android:orientation="vertical"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:padding="16dp">
 
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:layout_marginBottom="8dp"
-                                app:cardCornerRadius="24dp"
-                                app:cardElevation="2dp">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/blue_primary"
-                                    android:gravity="center">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="📷"
-                                        android:textSize="20sp" />
-
-                                </LinearLayout>
-
-                            </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/camera"
+                                android:layout_marginBottom="8dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="사진 추가하기"
+                                android:text="터치하여 사진 촬영"
+                                android:textSize="14sp"
                                 android:textColor="@color/text_secondary"
-                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>

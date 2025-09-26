@@ -220,7 +220,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="가입일: 12월 20일"
+                        android:text="가입일: 9월 27일"
                         android:textColor="@color/text_secondary"
                         android:textSize="16sp"
                         android:layout_marginBottom="8dp" />

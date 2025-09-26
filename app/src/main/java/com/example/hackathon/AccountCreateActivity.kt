@@ -7,7 +7,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -29,6 +31,8 @@ class AccountCreateActivity : AppCompatActivity() {
     private val cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
         if (success) {
             Toast.makeText(this, "영수증이 첨부되었습니다!", Toast.LENGTH_SHORT).show()
+            // 촬영한 이미지를 ImageView에 표시
+            displayCapturedImage()
         } else {
             Toast.makeText(this, "사진 촬영이 취소되었습니다.", Toast.LENGTH_SHORT).show()
         }
@@ -71,18 +75,16 @@ class AccountCreateActivity : AppCompatActivity() {
             // TODO: 10만원 입력
         }
         
-        findViewById<CardView>(R.id.btn500000).setOnClickListener {
-            // TODO: 50만원 입력
-        }
+
         
         findViewById<CardView>(R.id.btn1000000).setOnClickListener {
             // TODO: 100만원 입력
         }
         
         // 사진 업로드
-        // findViewById<CardView>(R.id.photoUploadArea).setOnClickListener {
-        //     checkCameraPermissionAndTakePhoto()
-        // }
+        findViewById<CardView>(R.id.photoUploadArea).setOnClickListener {
+            checkCameraPermissionAndTakePhoto()
+        }
     }
     
     private fun checkCameraPermissionAndTakePhoto() {
@@ -124,6 +126,16 @@ class AccountCreateActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Toast.makeText(this, "파일 생성 실패: ${e.message}", Toast.LENGTH_SHORT).show()
             null
+        }
+    }
+    
+    private fun displayCapturedImage() {
+        try {
+            val imageView = findViewById<ImageView>(R.id.capturedImageView)
+            imageView?.setImageURI(photoURI)
+            imageView?.visibility = View.VISIBLE
+        } catch (e: Exception) {
+            Toast.makeText(this, "이미지 표시 실패: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
     

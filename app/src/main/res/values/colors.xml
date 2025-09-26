@@ -10,8 +10,12 @@
     <!-- 버튼 색상 -->
     <color name="green_primary">#90EE90</color>
     <color name="brown_primary">#D2B48C</color>
-    <color name="blue_primary">#87CEEB</color>
+    <color name="blue_primary">#98D8C8</color> <!-- 연보라색에서 파스텔 초록색으로 변경 -->
     <color name="pink_primary">#FFB6C1</color>
+    
+    <!-- 테마 색상 (연보라색에서 초록색으로) -->
+    <color name="theme_primary">#A8E6CF</color> <!-- 연한 민트 초록색 -->
+    <color name="theme_primary_dark">#7FCDBB</color> <!-- 조금 더 진한 민트 초록색 -->
     
     <!-- 텍스트 색상 -->
     <color name="text_primary">#333333</color>
@@ -28,6 +32,9 @@
     <color name="primary_green">#4CAF50</color>
     <color name="border_light_gray">#E0E0E0</color>
     <color name="selected_activity">#4CAF50</color>
+    
+    <!-- 파스텔톤 초록색 -->
+    <color name="pastel_green">#B8E6B8</color> <!-- 파스텔톤 초록색 -->
     
     <!-- 농부 프로필 색상 -->
     <color name="farmer_icon_bg">#E4EADE</color>

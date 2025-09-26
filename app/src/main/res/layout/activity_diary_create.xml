@@ -551,6 +551,16 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="8dp" />
 
+            <!-- 촬영된 이미지 표시 영역 -->
+            <ImageView
+                android:id="@+id/capturedImageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="centerCrop"
+                android:background="@color/white"
+                android:visibility="gone" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/photoUploadArea"
                 android:layout_width="match_parent"
@@ -558,12 +568,13 @@
                 app:cardCornerRadius="12dp"
                 app:cardElevation="2dp"
                 android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/photo_upload_background"
+                    android:background="@color/white"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:padding="16dp">
@@ -577,7 +588,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="터치하여 사진 선택"
+                        android:text="터치하여 사진 촬영"
                         android:textSize="14sp"
                         android:textColor="@color/text_secondary"
                         android:textStyle="bold" />
@@ -588,36 +599,63 @@
 
         </LinearLayout>
 
-        <!-- 저장 버튼 -->
-        <Button
-            android:id="@+id/btnSave"
+        <!-- 하단 버튼들 -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@drawable/primary_button_background"
-            android:text="저장"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
-
-        <!-- 취소 버튼 -->
-        <TextView
-            android:id="@+id/btnCancel"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="취소"
-            android:textSize="16sp"
-            android:textColor="@color/text_secondary"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:padding="8dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="30dp"/>
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:elevation="4dp"
+            android:layout_marginTop="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/pastel_green"
+                    android:gravity="center"
+                    android:text="저장"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/tab_unselected"
+                    android:gravity="center"
+                    android:text="취소"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
 
     </LinearLayout>
 
