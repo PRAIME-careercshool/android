@@ -30,11 +30,14 @@
 
         <!-- 중앙 마이크 아이콘 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/micCardView"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginBottom="48dp"
             app:cardCornerRadius="80dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,7 +61,6 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -124,70 +126,22 @@
 
     </LinearLayout>
 
-    <!-- 하단 컨트롤 버튼들 -->
+    <!-- 하단 안내 메시지 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="32dp"
         android:gravity="center">
 
-        <!-- 일시 정지 버튼 -->
-        <LinearLayout
-            android:id="@+id/btnPause"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginEnd="48dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <ImageView
-                android:id="@+id/pauseButton"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/record_pause"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일시 정지"
-                android:textSize="14sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp" />
-
-        </LinearLayout>
-
-        <!-- 통화 종료 버튼 -->
-        <LinearLayout
-            android:id="@+id/btnEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <ImageView
-                android:id="@+id/endButton"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/record_end"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="통화 종료"
-                android:textSize="14sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp" />
-
-        </LinearLayout>
+            android:text="마이크 아이콘을 터치하여 통화를 시작하세요"
+            android:textSize="18sp"
+            android:textColor="@color/blue_primary"
+            android:textStyle="bold"
+            android:gravity="center" />
 
     </LinearLayout>
 

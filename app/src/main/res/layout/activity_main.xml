@@ -381,28 +381,11 @@
             android:gravity="center"
             android:padding="8dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#9DC5AC"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="📞"
-                        android:textSize="24sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="137dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/mic" />
         </LinearLayout>
 
         <LinearLayout

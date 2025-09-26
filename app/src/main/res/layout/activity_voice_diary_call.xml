@@ -41,12 +41,14 @@
 
         <!-- 시간 -->
         <TextView
+            android:id="@+id/timeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="20:00"
-            android:textSize="20sp"
+            android:text="00:00"
             android:textColor="@color/text_primary"
-            android:textStyle="bold" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
 
@@ -62,11 +64,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="진행율"
+            android:text="진행률"
             android:textSize="14sp"
             android:textColor="@color/text_secondary" />
 
         <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="0dp"
             android:layout_height="8dp"
             android:layout_weight="1"
@@ -78,6 +81,7 @@
             android:progressTint="@color/green_primary" />
 
         <TextView
+            android:id="@+id/progressText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1/7"
@@ -95,154 +99,74 @@
         android:padding="32dp"
         android:gravity="center">
 
-        <!-- 중앙 마이크 아이콘 -->
-        <ImageView
-            android:id="@+id/recordingIcon"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
+        <!-- 중앙 마이크 아이콘 컨테이너 (고정 크기) -->
+        <FrameLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_marginBottom="24dp"
-            android:src="@drawable/record_loading_1"
-            android:scaleType="centerCrop" />
+            android:gravity="center">
 
-        <!-- 현재 단계 표시 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="현재 단계 (1/7)"
-            android:textSize="16sp"
-            android:textColor="@color/text_secondary"
-            android:layout_marginBottom="16dp" />
+            <ImageView
+                android:id="@+id/recordingIcon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/record_loading_1" />
 
-        <!-- 현재 단계 카드 -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp">
+        </FrameLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/green_primary"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="인사"
-                    android:textSize="16sp"
-                    android:textColor="@color/text_primary"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
 
         <!-- 대화 영역 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="133dp"
             android:orientation="vertical">
 
             <!-- AI 어시스턴트 메시지 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="16dp"
-                android:gravity="start">
+                android:gravity="start"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
                     android:background="@drawable/button_green"
-                    android:padding="16dp"
-                    android:layout_marginEnd="32dp">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@android:drawable/ic_menu_myplaces"
-                            app:tint="@color/green_primary"
-                            android:layout_marginEnd="8dp" />
+                            android:layout_width="33dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/farmer" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="농지기"
-                            android:textSize="14sp"
-                            android:textColor="@color/green_primary"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/questionTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="안녕하세요! 농담 AI 어시스턴트 '농지기'입니다. 오늘 하루 농사일 어떠셨나요?"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_primary" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- 사용자 메시지 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@color/blue_primary"
-                    android:padding="16dp"
-                    android:layout_marginStart="32dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@android:drawable/ic_btn_speak_now"
-                            app:tint="@color/blue_primary"
-                            android:layout_marginEnd="8dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="말씀해주세요"
-                            android:textSize="14sp"
-                            android:textColor="@color/blue_primary"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="안녕하세요"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_primary" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -267,7 +191,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginEnd="48dp"
+            android:layout_marginEnd="100dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground">
 
@@ -282,7 +206,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="일시 정지"
-                android:textSize="14sp"
+                android:textSize="24sp"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp" />
@@ -310,7 +234,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="통화 종료"
-                android:textSize="14sp"
+                android:textSize="24sp"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp" />
@@ -318,5 +242,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
 </LinearLayout>
