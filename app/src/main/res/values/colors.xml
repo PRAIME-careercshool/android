@@ -28,4 +28,13 @@
     <color name="primary_green">#4CAF50</color>
     <color name="border_light_gray">#E0E0E0</color>
     <color name="selected_activity">#4CAF50</color>
+    
+    <!-- 농부 프로필 색상 -->
+    <color name="farmer_icon_bg">#E4EADE</color>
+    <color name="eco_badge_bg">#DBFCE7</color>
+    <color name="eco_badge_border">#B9F8CF</color>
+    <color name="verified_badge_bg">#DBEAFE</color>
+    <color name="verified_badge_border">#BEDBFF</color>
+    <color name="eco_text_color">#098F5D</color>
+    <color name="verified_text_color">#155DFC</color>
 </resources>

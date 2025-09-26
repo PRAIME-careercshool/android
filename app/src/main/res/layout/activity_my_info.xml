@@ -21,7 +21,7 @@
             android:id="@+id/btnBack"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_arrow_back"
+            android:src="@drawable/back_button"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="Back"
             android:padding="8dp"
@@ -70,83 +70,123 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="12dp">
+                        android:layout_marginBottom="16dp">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_farmer_hat"
-                            android:layout_marginEnd="12dp" />
+                        <!-- 농부 아이콘 (배경색 적용) -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="김농부"
-                            android:textSize="20sp"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/farmer_icon_bg"
+                                android:gravity="center">
 
-                    </LinearLayout>
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/farmer" />
 
-                    <!-- 인증 배지들 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="12dp">
+                            </LinearLayout>
 
-                        <!-- 친환경 인증 배지 -->
+                        </androidx.cardview.widget.CardView>
+
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:background="@drawable/badge_eco_friendly"
-                            android:paddingStart="8dp"
-                            android:paddingEnd="8dp"
-                            android:paddingTop="4dp"
-                            android:paddingBottom="4dp"
-                            android:layout_marginEnd="8dp">
-
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_checkmark"
-                                android:layout_marginEnd="4dp" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="친환경 인증"
-                                android:textColor="@android:color/white"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+                                android:text="김농부"
+                                android:textSize="24sp"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="8dp" />
 
-                        </LinearLayout>
-
-                        <!-- 검증된 농부 배지 -->
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:background="@drawable/badge_verified"
-                            android:paddingStart="8dp"
-                            android:paddingEnd="8dp"
-                            android:paddingTop="4dp"
-                            android:paddingBottom="4dp">
-
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_crown"
-                                android:layout_marginEnd="4dp" />
-
-                            <TextView
+                            <!-- 인증 배지들 -->
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="검증된 농부"
-                                android:textColor="@android:color/white"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+                                android:orientation="horizontal">
+
+                                <!-- 친환경 인증 배지 -->
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="0dp"
+                                    android:layout_marginEnd="8dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/eco_badge_background"
+                                        android:orientation="horizontal"
+                                        android:gravity="center_vertical"
+                                        android:padding="8dp">
+
+                                        <ImageView
+                                            android:layout_width="16dp"
+                                            android:layout_height="16dp"
+                                            android:src="@drawable/eco_friendly"
+                                            android:layout_marginEnd="4dp"
+                                            android:scaleType="fitCenter" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="친환경 인증"
+                                            android:textColor="@color/eco_text_color"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <!-- 검증된 농부 배지 -->
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="0dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/verified_badge_background"
+                                        android:orientation="horizontal"
+                                        android:gravity="center_vertical"
+                                        android:padding="8dp">
+
+                                        <ImageView
+                                            android:layout_width="16dp"
+                                            android:layout_height="16dp"
+                                            android:src="@drawable/verified"
+                                            android:layout_marginEnd="4dp"
+                                            android:scaleType="fitCenter" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="검증된 농부"
+                                            android:textColor="@color/verified_text_color"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -158,12 +198,12 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="12dp">
 
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@drawable/ic_location_pin"
+                            android:src="@drawable/location"
                             android:layout_marginEnd="8dp" />
 
                         <TextView
@@ -172,58 +212,26 @@
                             android:layout_height="wrap_content"
                             android:text="경기도 용인시 처인구"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
                     <!-- 가입일 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="가입일: "
-                            android:textColor="@color/text_secondary"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="12월 20일"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
+                        android:text="가입일: 12월 20일"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp" />
 
                     <!-- 재배작물 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="재배작물: "
-                            android:textColor="@color/text_secondary"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="사과"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
+                        android:text="재배작물: 사과"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -255,7 +263,7 @@
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:src="@drawable/ic_clock"
+                            android:src="@drawable/clock"
                             android:layout_marginEnd="8dp" />
 
                         <TextView
@@ -392,7 +400,7 @@
                         <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:src="@drawable/ic_pencil"
+                            android:src="@drawable/edit_info"
                             android:layout_marginEnd="16dp" />
 
                         <TextView
@@ -425,7 +433,7 @@
                         <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:src="@drawable/ic_settings"
+                            android:src="@drawable/settings"
                             android:layout_marginEnd="16dp" />
 
                         <TextView

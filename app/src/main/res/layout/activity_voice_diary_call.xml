@@ -283,7 +283,7 @@
                 android:layout_height="wrap_content"
                 android:text="일시 정지"
                 android:textSize="14sp"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp" />
 
@@ -311,7 +311,7 @@
                 android:layout_height="wrap_content"
                 android:text="통화 종료"
                 android:textSize="14sp"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp" />
 
